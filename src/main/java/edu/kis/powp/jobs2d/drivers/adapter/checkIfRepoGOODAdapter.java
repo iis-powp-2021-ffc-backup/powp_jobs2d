@@ -26,8 +26,8 @@ public class checkIfRepoGOODAdapter extends DrawPanelController implements Job2d
 		ILine line = LineFactory.getBasicLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
-
 		drawLine(line);
+		setPosition(x, y);
 	}
 
 	@Override
