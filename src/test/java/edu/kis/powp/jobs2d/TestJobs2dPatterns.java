@@ -10,10 +10,12 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drawer.DrawerFactory;
 import edu.kis.powp.jobs2d.drivers.adapter.Adapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+import edu.kis.powp.jobs2d.features.LineFeature;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -43,8 +45,11 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new Adapter();
-		DriverFeature.addDriver("Buggy Simulator", testDriver);
+		Job2dDriver buggyDriver = new Adapter();
+		DriverFeature.addDriver("Buggy Simulator", buggyDriver);
+
+		Job2dDriver lineDriver = new LineDrawerAdapter();
+		DriverFeature.addDriver("Superduper Simulator", lineDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
@@ -93,6 +98,7 @@ public class TestJobs2dPatterns {
 				setupDrivers(app);
 				setupPresetTests(app);
 				setupLogger(app);
+				LineFeature.setupLineMenu(app);
 
 				app.setVisibility(true);
 			}
