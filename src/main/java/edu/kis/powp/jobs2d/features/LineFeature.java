@@ -3,7 +3,9 @@ package edu.kis.powp.jobs2d.features;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.lines.ParametrizedLine;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class LineFeature {
@@ -24,5 +26,7 @@ public class LineFeature {
                 (ActionEvent e) -> line = LineFactory.getSpecialLine());
         app.addComponentMenuElement(LineFeature.class, "Basic",
                 (ActionEvent e) -> line = LineFactory.getBasicLine());
+        app.addComponentMenuElement(LineFeature.class, "Custom",
+                (ActionEvent e) -> line = new ParametrizedLine(Color.RED, 1.1F, false));
     }
 }
