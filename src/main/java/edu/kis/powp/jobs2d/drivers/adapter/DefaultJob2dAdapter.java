@@ -16,7 +16,7 @@ public class DefaultJob2dAdapter extends DrawPanelController implements Job2dDri
 		super();
 	}
 
-	public DrawPanelController getDrawerControler() {
+	public DrawPanelController getDrawerController() {
 		return drawerController;
 	}
 
