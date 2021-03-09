@@ -39,7 +39,7 @@ public class ExtendedJob2dAdapter extends DefaultJob2dAdapter {
         line.setStartCoordinates(super.getStartX(), super.getStartY());
         line.setEndCoordinates(x, y);
 
-        getDrawerController().drawLine(line);
+        getDrawPanelController().drawLine(line);
 
         setPosition(x, y);
 
