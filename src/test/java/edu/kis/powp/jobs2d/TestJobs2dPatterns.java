@@ -46,7 +46,7 @@ public class TestJobs2dPatterns {
 
 		ExtendedJob2dAdapter extendedDriver = new ExtendedJob2dAdapter();
 		DriverFeature.addDriver("Extended Simulator", extendedDriver);
-		application.addComponentMenuElement(DrawPanelController.class, "Basic", (ActionEvent e) -> extendedDriver.setLine(ExtendedJob2dAdapter.Line.CONTINUOUS));
+		application.addComponentMenuElement(DrawPanelController.class, "Continuous", (ActionEvent e) -> extendedDriver.setLine(ExtendedJob2dAdapter.Line.CONTINUOUS));
 		application.addComponentMenuElement(DrawPanelController.class, "Dotted", (ActionEvent e) -> extendedDriver.setLine(ExtendedJob2dAdapter.Line.DOTTED));
 		application.addComponentMenuElement(DrawPanelController.class, "Special", (ActionEvent e) -> extendedDriver.setLine(ExtendedJob2dAdapter.Line.SPECIAL));
 
