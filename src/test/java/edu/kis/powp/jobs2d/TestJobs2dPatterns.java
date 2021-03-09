@@ -8,8 +8,8 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapter.DefaultAdapter;
-import edu.kis.powp.jobs2d.drivers.adapter.ExtendedAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.DefaultJob2dAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.ExtendedJob2dAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -41,14 +41,14 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver defaultDriver = new DefaultAdapter();
+		Job2dDriver defaultDriver = new DefaultJob2dAdapter();
 		DriverFeature.addDriver("Default Simulator", defaultDriver);
 
-		ExtendedAdapter extendedDriver = new ExtendedAdapter();
+		ExtendedJob2dAdapter extendedDriver = new ExtendedJob2dAdapter();
 		DriverFeature.addDriver("Extended Simulator", extendedDriver);
-		application.addComponentMenuElement(DrawPanelController.class, "Basic", (ActionEvent e) -> extendedDriver.setLine(ExtendedAdapter.Line.CONTINUOUS));
-		application.addComponentMenuElement(DrawPanelController.class, "Dotted", (ActionEvent e) -> extendedDriver.setLine(ExtendedAdapter.Line.DOTTED));
-		application.addComponentMenuElement(DrawPanelController.class, "Special", (ActionEvent e) -> extendedDriver.setLine(ExtendedAdapter.Line.SPECIAL));
+		application.addComponentMenuElement(DrawPanelController.class, "Basic", (ActionEvent e) -> extendedDriver.setLine(ExtendedJob2dAdapter.Line.CONTINUOUS));
+		application.addComponentMenuElement(DrawPanelController.class, "Dotted", (ActionEvent e) -> extendedDriver.setLine(ExtendedJob2dAdapter.Line.DOTTED));
+		application.addComponentMenuElement(DrawPanelController.class, "Special", (ActionEvent e) -> extendedDriver.setLine(ExtendedJob2dAdapter.Line.SPECIAL));
 
 		DriverFeature.updateDriverInfo();
 	}

@@ -3,7 +3,7 @@ package edu.kis.powp.jobs2d.drivers.adapter;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 
-public class ExtendedAdapter extends DefaultAdapter {
+public class ExtendedJob2dAdapter extends DefaultJob2dAdapter {
 
     public enum Line {
         CONTINUOUS,
@@ -13,7 +13,7 @@ public class ExtendedAdapter extends DefaultAdapter {
 
     private Line line = Line.SPECIAL;
 
-    public ExtendedAdapter() {
+    public ExtendedJob2dAdapter() {
         super();
     }
 
