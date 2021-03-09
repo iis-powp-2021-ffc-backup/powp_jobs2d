@@ -5,24 +5,24 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 
 public class ExtendedAdapter extends DefaultAdapter {
 
-    private LineType lineType = LineType.DOTTED;
+    public enum Line {
+        CONTINUOUS,
+        DOTTED,
+        SPECIAL
+    }
+
+    private Line line = Line.SPECIAL;
 
     public ExtendedAdapter() {
         super();
     }
 
-    enum LineType {
-        BASIC, DOTTED, SPECIAL
-    }
-
-    public void setLineType(LineType type) {
-        this.lineType = type;
+    public void setLine(Line type) {
+        this.line = type;
     }
 
     private ILine getLine() {
-        switch (this.lineType) {
-            case BASIC:
-                return LineFactory.getBasicLine();
+        switch (this.line) {
             case DOTTED:
                 return LineFactory.getDottedLine();
             case SPECIAL:
@@ -35,10 +35,14 @@ public class ExtendedAdapter extends DefaultAdapter {
     @Override
     public void operateTo(int x, int y) {
         ILine line = getLine();
+
         line.setStartCoordinates(super.getStartX(), super.getStartY());
         line.setEndCoordinates(x, y);
+
         getDrawerControler().drawLine(line);
+
         setPosition(x, y);
+
         drawLine(line);
     }
 
