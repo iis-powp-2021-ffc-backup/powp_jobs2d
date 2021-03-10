@@ -8,16 +8,15 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 
 /**
  * TODO: Zmiana nazwy klasy Adapter
- * TODO: Zmiana miejsca rysowania po uruchomieniu TestJob2dDriverTest.java
  */
 
 /**
  * driver adapter to drawer with several bugs.
  */
-public class Adapter extends DrawPanelController implements Job2dDriver {
+public class DrawerWindowDriver extends DrawPanelController implements Job2dDriver {
 	private int startX = 0, startY = 0;
 
-	public Adapter() {
+	public DrawerWindowDriver() {
 		super();
 	}
 
