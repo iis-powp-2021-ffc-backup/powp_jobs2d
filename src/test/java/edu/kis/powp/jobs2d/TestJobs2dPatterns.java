@@ -12,6 +12,7 @@ import edu.kis.powp.jobs2d.events.Joe1SelectTestFitureOptionListener;
 import edu.kis.powp.jobs2d.events.Joe2SelectTestFitureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+import edu.kis.powp.jobs2d.features.LineFeature;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -73,6 +74,7 @@ public class TestJobs2dPatterns {
 			public void run() {
 				Application app = new Application("2d jobs Visio");
 				DrawerFeature.setupDrawerPlugin(app);
+				LineFeature.setupLineFeature(app);
 
 				DriverFeature.setupDriverPlugin(app);
 				setupDrivers(app);

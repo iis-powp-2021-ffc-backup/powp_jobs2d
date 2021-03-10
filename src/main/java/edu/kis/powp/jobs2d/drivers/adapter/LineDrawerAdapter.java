@@ -1,11 +1,11 @@
 package edu.kis.powp.jobs2d.drivers.adapter;
 
 import edu.kis.legacy.drawer.shape.ILine;
-import edu.kis.legacy.drawer.shape.LineFactory;
+import edu.kis.powp.jobs2d.features.LineFeature;
 
 public class LineDrawerAdapter extends PanelDrawerAdapter {
 
-    private ILine line = LineFactory.getDottedLine();
+    private ILine line = LineFeature.getLine();
 
     @Override
     public void operateTo(int x, int y) {
