@@ -6,12 +6,17 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 
 /**
+ * TODO: Zmiana nazwy klasy Adapter
+ * TODO: Zmiana miejsca rysowania po uruchomieniu TestJob2dDriverTest.java
+ */
+
+/**
  * driver adapter to drawer with several bugs.
  */
-public class MyAdapter extends DrawPanelController implements Job2dDriver {
+public class Adapter extends DrawPanelController implements Job2dDriver {
 	private int startX = 0, startY = 0;
 
-	public MyAdapter() {
+	public Adapter() {
 		super();
 	}
 
@@ -26,7 +31,7 @@ public class MyAdapter extends DrawPanelController implements Job2dDriver {
 		ILine line = LineFactory.getBasicLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
-
+		setPosition(x, y);
 		drawLine(line);
 	}
 
