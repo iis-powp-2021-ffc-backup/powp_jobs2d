@@ -2,13 +2,14 @@ package edu.kis.powp.jobs2d;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
-import java.awt.event.WindowAdapter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineType;
 import edu.kis.powp.jobs2d.drivers.adapter.PlotterAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestAdditional;
@@ -45,6 +46,17 @@ public class TestJobs2dPatterns {
 		Job2dDriver testDriver = new PlotterAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
+		LineDrawerAdapter multiDriver = new LineDrawerAdapter();
+		DriverFeature.addDriver("Multi-style Driver", multiDriver);
+
+		application.addComponentMenu(LineDrawerAdapter.class, "Line Style", 0);
+		application.addComponentMenuElement(LineDrawerAdapter.class, "Basic line",
+				(ActionEvent e) -> multiDriver.setLine(LineType.BASIC));
+		application.addComponentMenuElement(LineDrawerAdapter.class, "Dotted line",
+				(ActionEvent e) -> multiDriver.setLine(LineType.DOTTED));
+		application.addComponentMenuElement(LineDrawerAdapter.class, "Special line",
+				(ActionEvent e) -> multiDriver.setLine(LineType.SPECIAL));
+
 		DriverFeature.updateDriverInfo();
 	}
 
@@ -77,7 +89,6 @@ public class TestJobs2dPatterns {
 				(ActionEvent e) -> logger.setLevel(Level.SEVERE));
 		application.addComponentMenuElement(Logger.class, "OFF logging", (ActionEvent e) -> logger.setLevel(Level.OFF));
 	}
-
 	/**
 	 * Launch the application.
 	 */
