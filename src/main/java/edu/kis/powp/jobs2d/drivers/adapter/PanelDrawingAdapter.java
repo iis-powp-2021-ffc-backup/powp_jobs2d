@@ -6,7 +6,7 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 
 /**
- * driver adapter to drawer with several bugs.
+ * driver adapter to drawer without bugs
  */
 public class PanelDrawingAdapter extends DrawPanelController implements Job2dDriver {
 	private int startX = 0, startY = 0;
