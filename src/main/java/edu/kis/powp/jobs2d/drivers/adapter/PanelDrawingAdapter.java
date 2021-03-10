@@ -32,6 +32,6 @@ public class PanelDrawingAdapter extends DrawPanelController implements Job2dDri
 
 	@Override
 	public String toString() {
-		return "@Q!$!@$!#@$(*#@&Q(%^*#@";
+		return "Panel Drawing Simulator";
 	}
 }
