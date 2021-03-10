@@ -9,9 +9,9 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 /**
  * driver adapter to drawer without bugs
  */
-public class PanelDrawingAdapter implements Job2dDriver {
-	private int startX = 0, startY = 0;
-	private DrawPanelController drawerController = DrawerFeature.getDrawerController();
+public class PanelDrawerAdapter implements Job2dDriver {
+	protected int startX = 0, startY = 0;
+	protected DrawPanelController drawerController = DrawerFeature.getDrawerController();
 
 	@Override
 	public void setPosition(int x, int y) {
@@ -30,6 +30,6 @@ public class PanelDrawingAdapter implements Job2dDriver {
 
 	@Override
 	public String toString() {
-		return "Panel Drawing Simulator";
+		return "Panel Drawer Simulator";
 	}
 }

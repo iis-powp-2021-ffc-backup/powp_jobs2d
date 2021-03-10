@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapter.PanelDrawingAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.PanelDrawerAdapter;
 import edu.kis.powp.jobs2d.events.AbstractSelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.Joe1SelectTestFitureOptionListener;
 import edu.kis.powp.jobs2d.events.Joe2SelectTestFitureOptionListener;
@@ -41,7 +41,7 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new PanelDrawingAdapter();
+		Job2dDriver testDriver = new PanelDrawerAdapter();
 		DriverFeature.addDriver("Simulator", testDriver);
 
 		DriverFeature.updateDriverInfo();
