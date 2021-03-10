@@ -14,6 +14,7 @@ import edu.kis.powp.jobs2d.drivers.adapter.PlotterAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestAdditional;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestJane;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -29,8 +30,10 @@ public class TestJobs2dPatterns {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
 		SelectTestAdditional selectTestAdditional = new SelectTestAdditional(DriverFeature.getDriverManager());
+		SelectTestJane selectTestJane = new SelectTestJane(DriverFeature.getDriverManager());
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestAdditional);
+		application.addTest("Figure Jane", selectTestJane);
 	}
 
 	/**
