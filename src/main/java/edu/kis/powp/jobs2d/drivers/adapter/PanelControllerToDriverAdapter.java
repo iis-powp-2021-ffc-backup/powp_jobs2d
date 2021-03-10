@@ -35,6 +35,6 @@ public class PanelControllerToDriverAdapter extends DrawPanelController implemen
 
 	@Override
 	public String toString() {
-		return "@Q!$!@$!#@$(*#@&Q(%^*#@";
+		return "Adapter with basic line";
 	}
 }
