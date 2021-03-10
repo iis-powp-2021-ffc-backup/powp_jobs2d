@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="27fc5f05-3e89-495c-a601-a9bd29aec905" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1pZ1Cmaj2mwIfiE5R8DaJO5d4Iv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager" selected="Application.TestJobs2dPatterns">
+    <configuration name="Job2dDriverTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.kis.powp.jobs2d.Job2dDriverTest" />
+      <module name="jobs2d" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.kis.powp.jobs2d.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestJobs2dPatterns" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.kis.powp.jobs2d.TestJobs2dPatterns" />
+      <module name="jobs2d" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.kis.powp.jobs2d.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestJobs2dPatterns" />
+        <item itemvalue="Application.Job2dDriverTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27fc5f05-3e89-495c-a601-a9bd29aec905" name="Default Changelist" comment="" />
+      <created>1615375672474</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615375672474</updated>
+      <workItem from="1615375678192" duration="1213000" />
+      <workItem from="1615378255813" duration="4028000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="768" y="298" key="#Project_Structure" timestamp="1615375811183">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="768" y="298" key="#Project_Structure/0.0.2560.1440/2560.0.1920.1080@0.0.2560.1440" timestamp="1615375811183" />
+    <state width="2518" height="159" key="GridCell.Tab.0.bottom" timestamp="1615382601760">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="159" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.0.1920.1080@0.0.2560.1440" timestamp="1615382601760" />
+    <state width="2518" height="159" key="GridCell.Tab.0.center" timestamp="1615382601758">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="159" key="GridCell.Tab.0.center/0.0.2560.1440/2560.0.1920.1080@0.0.2560.1440" timestamp="1615382601758" />
+    <state width="2518" height="159" key="GridCell.Tab.0.left" timestamp="1615382601757">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="159" key="GridCell.Tab.0.left/0.0.2560.1440/2560.0.1920.1080@0.0.2560.1440" timestamp="1615382601757" />
+    <state width="2518" height="159" key="GridCell.Tab.0.right" timestamp="1615382601759">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="159" key="GridCell.Tab.0.right/0.0.2560.1440/2560.0.1920.1080@0.0.2560.1440" timestamp="1615382601759" />
+  </component>
+</project>
