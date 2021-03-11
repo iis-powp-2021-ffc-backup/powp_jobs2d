@@ -9,6 +9,7 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.PanelDrawerAdapter;
 import edu.kis.powp.jobs2d.events.AbstractSelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.JaneSelectTestFitureOptionListener;
 import edu.kis.powp.jobs2d.events.Joe1SelectTestFitureOptionListener;
 import edu.kis.powp.jobs2d.events.Joe2SelectTestFitureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -28,9 +29,12 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 		AbstractSelectTestFigureOptionListener Joe2TestFigureOptionListener = new Joe2SelectTestFitureOptionListener(
 				DriverFeature.getDriverManager());
+		AbstractSelectTestFigureOptionListener JaneTestFigureOptionListener = new JaneSelectTestFitureOptionListener(
+				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", Joe1TestFigureOptionListener);
 		application.addTest("Figure Joe 2", Joe2TestFigureOptionListener);
+		application.addTest("Figure Jane", JaneTestFigureOptionListener);
 	}
 
 	/**
