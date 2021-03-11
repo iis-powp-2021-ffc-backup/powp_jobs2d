@@ -3,9 +3,9 @@ package edu.kis.powp.jobs2d.events;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
-public class Joe2SelectTestFitureOptionListener extends AbstractSelectTestFigureOptionListener {
+public class Joe2SelectTestFigureOptionListener extends AbstractSelectTestFigureOptionListener {
 
-    public Joe2SelectTestFitureOptionListener(DriverManager driverManager) {
+    public Joe2SelectTestFigureOptionListener(DriverManager driverManager) {
         super(driverManager);
     }
 

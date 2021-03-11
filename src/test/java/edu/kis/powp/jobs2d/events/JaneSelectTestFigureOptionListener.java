@@ -4,9 +4,9 @@ import edu.kis.powp.jobs2d.adapter.DriverAdapter;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJane;
 
-public class JaneSelectTestFitureOptionListener extends AbstractSelectTestFigureOptionListener {
+public class JaneSelectTestFigureOptionListener extends AbstractSelectTestFigureOptionListener {
 
-    public JaneSelectTestFitureOptionListener(DriverManager driverManager) {
+    public JaneSelectTestFigureOptionListener(DriverManager driverManager) {
         super(driverManager);
     }
 
