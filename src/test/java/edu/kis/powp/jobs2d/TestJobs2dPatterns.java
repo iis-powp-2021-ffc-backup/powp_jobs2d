@@ -79,6 +79,10 @@ public class TestJobs2dPatterns {
 		application.addComponentMenuElement(Logger.class, "OFF logging", (ActionEvent e) -> logger.setLevel(Level.OFF));
 	}
 
+	/**
+	 * Set Up line properties for LineDrawerAdapter
+	 * @param application Application context.
+	 */
 	private static void setupLineMenu(Application application) {
 		application.addComponentMenu(LineDrawerAdapter.class, "Line properties");
 		application.addComponentMenuElement(LineDrawerAdapter.class, "Basic", (ActionEvent e) -> LineDrawerAdapter.setLineType(e.getActionCommand()));
