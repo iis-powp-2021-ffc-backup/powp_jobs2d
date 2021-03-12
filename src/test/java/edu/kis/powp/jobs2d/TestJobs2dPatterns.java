@@ -8,7 +8,9 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapter.Adapter;
+import edu.kis.powp.jobs2d.drivers.adapters.JoeAdapter;
+import edu.kis.powp.jobs2d.drivers.adapters.LineTypeAdapter;
+import edu.kis.powp.jobs2d.drivers.adapters.LineTypeAdapter.LineType;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -27,6 +29,8 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
+		application.addTest("Figure Jane 1", selectTestFigureOptionListener);
 	}
 
 	/**
@@ -39,8 +43,14 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new Adapter();
+		Job2dDriver testDriver = new JoeAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
+
+		DriverFeature.addDriver("Basic Line", new LineTypeAdapter(LineType.LINEBASIC));
+
+		DriverFeature.addDriver("Dotted line", new LineTypeAdapter(LineType.LINEDOTTED));
+
+		DriverFeature.addDriver("Special line", new LineTypeAdapter(LineType.LINESPECIAL));
 
 		DriverFeature.updateDriverInfo();
 	}
@@ -51,7 +61,8 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
-		// DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
+		// DefaultDrawerFrame defaultDrawerWindow =
+		// DefaultDrawerFrame.getDefaultDrawerFrame();
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
 		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
 				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
