@@ -5,16 +5,17 @@ import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 
+import javax.swing.*;
+
 /**
  * driver adapter to drawer with several bugs.
  */
-public class Adapter extends DrawPanelController implements Job2dDriver {
+public class DrawingAdapter extends DrawPanelController implements Job2dDriver {
 	private int startX = 0, startY = 0;
-
-	public Adapter() {
+	public DrawingAdapter(JPanel panelToDraw) {
 		super();
+		initialize(panelToDraw);
 	}
-
 	@Override
 	public void setPosition(int x, int y) {
 		this.startX = x;
