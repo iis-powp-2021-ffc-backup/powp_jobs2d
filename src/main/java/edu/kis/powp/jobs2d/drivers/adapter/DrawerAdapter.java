@@ -1,18 +1,15 @@
 package edu.kis.powp.jobs2d.drivers.adapter;
-
-import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
-import edu.kis.legacy.drawer.shape.LineFactory;
+import edu.kis.legacy.drawer.shape.line.BasicLine;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import static edu.kis.powp.jobs2d.features.DrawerFeature.getDrawerController;
-
 /**
  * driver adapter to drawer with several bugs.
  */
-public class OldLineDrawerAdapter extends DrawPanelController implements Job2dDriver {
+public class DrawerAdapter implements Job2dDriver {
 	private int startX = 0, startY = 0;
 
-	public OldLineDrawerAdapter() {
+	public DrawerAdapter() {
 		super();
 	}
 
@@ -24,14 +21,12 @@ public class OldLineDrawerAdapter extends DrawPanelController implements Job2dDr
 
 	@Override
 	public void operateTo(int x, int y) {
-		ILine line = LineFactory.getBasicLine();
+		ILine line = new BasicLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 		getDrawerController().drawLine(line);
 		setPosition(x, y);
 	}
-
-
 
 	@Override
 	public String toString() {
