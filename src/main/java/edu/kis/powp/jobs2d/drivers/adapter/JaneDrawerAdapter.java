@@ -7,8 +7,6 @@ import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
 public class JaneDrawerAdapter extends AbstractDriver implements Job2dDriver {
-    private int  x, y;
-
     public JaneDrawerAdapter() {
         super(0,0);
     }
