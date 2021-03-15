@@ -13,7 +13,9 @@ import edu.kis.powp.jobs2d.drivers.adapter.JaneDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.RectangleAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.SelectJaneFigureOptionListener;
+import edu.kis.powp.jobs2d.events.SelectJoe1FigureOptionListener;
+import edu.kis.powp.jobs2d.events.SelectJoe2FigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJane;
@@ -28,23 +30,18 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
+		SelectJoe1FigureOptionListener selectJoe1FigureOptionListener = new SelectJoe1FigureOptionListener(
 				DriverFeature.getDriverManager());
 
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Figure Joe 2", new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				FiguresJoe.figureScript2(DriverFeature.getDriverManager().getCurrentDriver());
-			}
-		});
-		application.addTest("Figure Jane", new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(DriverFeature.getDriverManager().getCurrentDriver() instanceof AbstractDriver)
-				FiguresJane.figureScript((AbstractDriver)DriverFeature.getDriverManager().getCurrentDriver());
-			}
-		});
+		application.addTest("Figure Joe 1", selectJoe1FigureOptionListener);
+
+		SelectJoe2FigureOptionListener selectJoe2FigureOptionListener = new SelectJoe2FigureOptionListener(
+				DriverFeature.getDriverManager());
+		application.addTest("Figure Joe 2", selectJoe2FigureOptionListener);
+
+		SelectJaneFigureOptionListener selectJaneFigureOptionListener = new SelectJaneFigureOptionListener(
+				DriverFeature.getDriverManager());
+		application.addTest("Figure Jane", selectJaneFigureOptionListener);
 	}
 
 	/**
