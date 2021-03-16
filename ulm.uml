@@ -1,0 +1,18 @@
+// Cool Class Diagram
+// ------------------
+
+[≪Interface≫;Job2dDriver|+setPosition(x: int, y: int);+operateTo(x: int, y: int)]
+
+[DrawPanelController|-drawPanelUI: DrawPanelUI; -drawArea: JPanel|-initialize();-getDrawPanelUI(): DrawPanelUI;-getDrawArea(): JPanel|+initialize(drawArea: JPanel); +drawLine(line: ILine );+clearPanel()]
+
+[BasicLineDrawerAdapter|-startX: int;-startY: int|+setPosition(x: int, y: int);+operateTo(x: int, y: int); +toString(): String]
+
+[DrawerFeature|-drawerController: DrawPanelController|+setupDrawerPlugin(app: Application);+getDrawerController(): DrawPanelController]
+
+[LineFactory|+getBasicLine(): ILine;+getDottedLine(): ILine;+getSpecialLine(): ILine]
+
+[LineFactory]<-.-uses[BasicLineDrawerAdapter]
+[DrawerFeature]<-.-uses[BasicLineDrawerAdapter]
+
+[Job2dDriver]^-.-[BasicLineDrawerAdapter]
+[DrawPanelController]^-[BasicLineDrawerAdapter]

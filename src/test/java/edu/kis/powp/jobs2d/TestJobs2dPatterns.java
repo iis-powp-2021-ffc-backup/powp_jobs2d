@@ -1,5 +1,6 @@
 package edu.kis.powp.jobs2d;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
@@ -7,12 +8,17 @@ import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
+import edu.kis.legacy.drawer.shape.ILine;
+import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapter.DrawerWindowDriver;
+import edu.kis.powp.jobs2d.drivers.adapter.BasicLineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+import edu.kis.powp.jobs2d.lines.CustomizableLine;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -25,8 +31,12 @@ public class TestJobs2dPatterns {
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
+		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
+					DriverFeature.getDriverManager());		
+		
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
 	}
 
 	/**
@@ -39,8 +49,16 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new DrawerWindowDriver();
+		Job2dDriver testDriver = new BasicLineDrawerAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
+
+
+		CustomizableLine line = new CustomizableLine(Color.PINK, 8.0f, true);
+		Job2dDriver dottedDriver = new LineDrawerAdapter(line);
+		DriverFeature.addDriver("Custom line Simulator", dottedDriver);
+
+		Job2dDriver specialDriver = new LineDrawerAdapter(LineFactory.getSpecialLine());
+		DriverFeature.addDriver("Special line Simulator", specialDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
