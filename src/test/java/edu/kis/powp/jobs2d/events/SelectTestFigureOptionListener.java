@@ -9,13 +9,20 @@ import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 public class SelectTestFigureOptionListener implements ActionListener {
 
 	private DriverManager driverManager;
-
+	private boolean alternativeActionFlag = false;
 	public SelectTestFigureOptionListener(DriverManager driverManager) {
 		this.driverManager = driverManager;
 	}
+	public void selectAlternativeAction(){
+		this.alternativeActionFlag = true;
+	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		FiguresJoe.figureScript1(driverManager.getCurrentDriver());
+		if(alternativeActionFlag)
+			FiguresJoe.figureScript2(driverManager.getCurrentDriver());
+		else
+			FiguresJoe.figureScript1(driverManager.getCurrentDriver());
 	}
 }

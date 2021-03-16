@@ -29,7 +29,6 @@ public class DrawerAdapter extends DrawPanelController implements Job2dDriver {
 		line.setEndCoordinates(x, y);
 		drawerController.drawLine(line);
 		setPosition(x,y);
-
 	}
 
 	@Override
