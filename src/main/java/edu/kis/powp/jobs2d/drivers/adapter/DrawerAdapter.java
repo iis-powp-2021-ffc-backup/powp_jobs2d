@@ -22,6 +22,7 @@ public class DrawerAdapter extends DrawPanelController implements Job2dDriver {
 		this.lineDrawerAdapter = lineDrawerAdapter;
 	}
 	public void setLineType(LineType lineType){
+		System.out.println("adapter "+lineType);
 		lineDrawerAdapter.setLineType(lineType);
 	}
 
@@ -33,7 +34,6 @@ public class DrawerAdapter extends DrawPanelController implements Job2dDriver {
 
 	@Override
 	public void operateTo(int x, int y) {
-		lineDrawerAdapter.setLineType(LineType.DottedLine);
 		ILine line = lineDrawerAdapter.getLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);

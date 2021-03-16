@@ -6,7 +6,6 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 public class LineDrawerAdapter {
 
     private LineType lineType = LineType.BasicLine;
-
     public LineDrawerAdapter() {
         super();
     }
