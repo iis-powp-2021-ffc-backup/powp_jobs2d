@@ -22,7 +22,6 @@ public class DrawerAdapter extends DrawPanelController implements Job2dDriver {
 		this.lineDrawerAdapter = lineDrawerAdapter;
 	}
 	public void setLineType(LineType lineType){
-		System.out.println("adapter "+lineType);
 		lineDrawerAdapter.setLineType(lineType);
 	}
 
