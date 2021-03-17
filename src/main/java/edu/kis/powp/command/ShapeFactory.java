@@ -3,17 +3,12 @@ import edu.kis.powp.jobs2d.Job2dDriver;
 
 public class ShapeFactory {
   
-  public static ComplexCommand getRectangle(Job2dDriver driver) {
+  public static ComplexCommand getTriangle(Job2dDriver driver) {
     return new ComplexCommand(
-      new SetPositionCommand(driver, -120, -120),
-      new OperateToCommand(driver, 120, -120),
-      new OperateToCommand(driver, 120, -120),
-      new OperateToCommand(driver, 120, 120),
-      new OperateToCommand(driver, -120, 120),
-      new OperateToCommand(driver, -120, -120),
-      new OperateToCommand(driver, 120, 120),
-      new SetPositionCommand(driver, 120, -120),
-      new OperateToCommand(driver, -120, 120)
+      new SetPositionCommand(driver, 0, 0),
+      new OperateToCommand(driver, 100, 100),
+      new OperateToCommand(driver, 100, -100),
+      new OperateToCommand(driver, 0, 0)
     );
   }
 }
