@@ -8,8 +8,10 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapter.Adapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.events.AbstractSelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectCustomTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
@@ -26,7 +28,10 @@ public class TestJobs2dPatterns {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
 
+		AbstractSelectTestFigureOptionListener Joe2 = new SelectCustomTestFigureOptionListener(DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", Joe2);
 	}
 
 	/**
@@ -39,8 +44,8 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new Adapter();
-		DriverFeature.addDriver("Buggy Simulator", testDriver);
+		Job2dDriver testDriver = new LineDrawerAdapter();
+		DriverFeature.addDriver("LineDrawerSimulator", testDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
