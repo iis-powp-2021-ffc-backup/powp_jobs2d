@@ -39,4 +39,6 @@ public class NormalAdapter extends DrawPanelController implements Job2dDriver {
 	public String toString() {
 		return "NormalLine";
 	}
+
+
 }
