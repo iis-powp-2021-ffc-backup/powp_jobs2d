@@ -3,13 +3,14 @@ package edu.kis.powp.command;
 import edu.kis.powp.jobs2d.Job2dDriver;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-class ComplexCommand implements DriverCommand {
-    List<DriverCommand> commands = new ArrayList<>();
+public class ComplexCommand implements DriverCommand {
+    private final List<DriverCommand> commands;
 
-    public void addComand(DriverCommand command) {
-        commands.add(command);
+    public ComplexCommand(DriverCommand... commands) {
+        this.commands = new ArrayList<>(Arrays.asList(commands));
     }
 
     @Override

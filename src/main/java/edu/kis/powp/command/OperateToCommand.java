@@ -2,10 +2,10 @@ package edu.kis.powp.command;
 
 import edu.kis.powp.jobs2d.Job2dDriver;
 
-class OperateToCommand implements DriverCommand {
+public class OperateToCommand implements DriverCommand {
     private int x, y;
 
-    OperateToCommand(int x, int y) {
+    public OperateToCommand(int x, int y) {
         this.x = x;
         this.y = y;
     }

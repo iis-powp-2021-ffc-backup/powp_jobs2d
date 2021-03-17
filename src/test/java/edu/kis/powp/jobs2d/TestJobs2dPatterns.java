@@ -10,6 +10,8 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.Adapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectRectangleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectDiamondOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
@@ -25,8 +27,14 @@ public class TestJobs2dPatterns {
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
+		SelectRectangleOptionListener selectRectangleOptionListener = new SelectRectangleOptionListener(
+				DriverFeature.getDriverManager());
+		SelectDiamondOptionListener selectDiamondOptionListener = new SelectDiamondOptionListener(
+				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Rectangle", selectRectangleOptionListener);
+		application.addTest("Diamond", selectDiamondOptionListener);
 	}
 
 	/**
