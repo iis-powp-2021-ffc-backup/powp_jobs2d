@@ -6,13 +6,14 @@ import java.awt.event.ActionListener;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
-
+import edu.kis.powp.command.ComplexShape;
 import edu.kis.powp.command.ShapeFactory;
+import edu.kis.powp.command.ComplexShape.ShapeType;
 
 public class SelectTestFigureOptionListener implements ActionListener {
 
 	public enum TestType {
-		JOE1, JOE2, SHAPE
+		JOE1, JOE2, SHAPE, COMPLEX
 	};
 
 	private DriverManager driverManager;
@@ -35,6 +36,12 @@ public class SelectTestFigureOptionListener implements ActionListener {
 				break;
 			case SHAPE:
 				ShapeFactory.getTriangle(driver).execute();
+				break;
+			case COMPLEX:
+				new ComplexShape(driver, 
+					ShapeType.RECTANGLE,
+					ShapeType.TRIANGLE
+				).execute();
 				break;
 		}
 	}

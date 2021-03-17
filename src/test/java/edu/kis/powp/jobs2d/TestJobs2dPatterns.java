@@ -30,6 +30,7 @@ public class TestJobs2dPatterns {
 		application.addTest("Figure Joe 1", new SelectTestFigureOptionListener(driverManager, TestType.JOE1));
 		application.addTest("Figure Joe 2", new SelectTestFigureOptionListener(driverManager, TestType.JOE2));
 		application.addTest("Shape Factory test", new SelectTestFigureOptionListener(driverManager, TestType.SHAPE));
+		application.addTest("Complex shape test", new SelectTestFigureOptionListener(driverManager, TestType.COMPLEX));
 	}
 
 	/**
