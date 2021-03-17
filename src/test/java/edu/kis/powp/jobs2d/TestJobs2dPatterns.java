@@ -7,7 +7,9 @@ import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
+import edu.kis.legacy.drawer.panel.DrawPanelUI;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.MyAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -46,6 +48,9 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver testDriver = new MyAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
+                
+                Job2dDriver customDriver = new LineDrawerAdapter();
+		DriverFeature.addDriver("Custom Simulator", customDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
@@ -79,6 +84,8 @@ public class TestJobs2dPatterns {
 				(ActionEvent e) -> logger.setLevel(Level.SEVERE));
 		application.addComponentMenuElement(Logger.class, "OFF logging", (ActionEvent e) -> logger.setLevel(Level.OFF));
 	}
+        
+       
 
 	/**
 	 * Launch the application.
