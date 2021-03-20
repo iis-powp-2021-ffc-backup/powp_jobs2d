@@ -32,10 +32,16 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager(), DrawerFactory.getDoodleDrawer());
 		SelectTestFigureOptionListener figureJaneListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager(), DrawerFactory.getJaneDrawer());
+		SelectTestFigureOptionListener squareListener = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), DrawerFactory.getSquareDrawer());
+		SelectTestFigureOptionListener triangleListener = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), DrawerFactory.getTriangleDrawer());
 
 		application.addTest("Figure Joe 1", figureJoeOneListener);
 		application.addTest("Figure Joe 2", figureJoeTwoListener);
 		application.addTest("Figure Jane", figureJaneListener);
+		application.addTest("Square command", squareListener);
+		application.addTest("Triangle command", triangleListener);
 	}
 
 	/**

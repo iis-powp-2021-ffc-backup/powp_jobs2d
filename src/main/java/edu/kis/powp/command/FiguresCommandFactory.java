@@ -7,11 +7,20 @@ public class FiguresCommandFactory {
 
     public static IDriverCommand GetCommandForSquare(int size) {
         List<IDriverCommand> squareCommands = new ArrayList<>();
-        squareCommands.add(new SetPositionCommand(0,0));
-        squareCommands.add(new OperateToCommand(0,size));
-        squareCommands.add(new OperateToCommand(size,size));
-        squareCommands.add(new OperateToCommand(size,0));
-        squareCommands.add(new OperateToCommand(0,0));
+        squareCommands.add(new SetPositionCommand(-size/2,-size/2));
+        squareCommands.add(new OperateToCommand(-size/2,size/2));
+        squareCommands.add(new OperateToCommand(size/2,size/2));
+        squareCommands.add(new OperateToCommand(size/2,-size/2));
+        squareCommands.add(new OperateToCommand(-size/2,-size/2));
+        return new ComplexDriverCommand(squareCommands);
+    }
+
+    public static IDriverCommand GetCommandForRightTriangle(int length) {
+        List<IDriverCommand> squareCommands = new ArrayList<>();
+        squareCommands.add(new SetPositionCommand(-length/2,length/2));
+        squareCommands.add(new OperateToCommand(-length/2,-length/2));
+        squareCommands.add(new OperateToCommand(length/2,length/2));
+        squareCommands.add(new OperateToCommand(-length/2,length/2));
         return new ComplexDriverCommand(squareCommands);
     }
 
