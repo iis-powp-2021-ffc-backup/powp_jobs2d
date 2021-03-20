@@ -11,9 +11,8 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.BasicLineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.SpecialLineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectDamiansFigureOptionListener;
-import edu.kis.powp.jobs2d.events.SelectSecondTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.factories.FigureType;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -26,18 +25,17 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager());
 
-		SelectSecondTestFigureOptionListener selectSecondTestFigureOptionListener = new SelectSecondTestFigureOptionListener(
-				DriverFeature.getDriverManager());
-
-		SelectDamiansFigureOptionListener selectDamiansFigureOptionListener = new SelectDamiansFigureOptionListener(
-				DriverFeature.getDriverManager());
-
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Figure Joe 2", selectSecondTestFigureOptionListener);
-		application.addTest("Figure Damian 1", selectDamiansFigureOptionListener);
+		application.addTest("Figure Joe 1", new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), FigureType.FIGURE_JOE_1));
+		application.addTest("Figure Joe 2", new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), FigureType.FIGURE_JOE_2));
+		application.addTest("Figure Damian 1", new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), FigureType.FIGURE_DAMIAN_1));
+		application.addTest("Figure Rectangle", new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), FigureType.RECTANGLE));
+		application.addTest("Figure Triangle", new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), FigureType.TRIANGLE));
 	}
 
 	/**
