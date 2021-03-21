@@ -10,11 +10,10 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.BasicLineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.SpecialLineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
-import edu.kis.powp.jobs2d.events.SelectSecondTestFigureOptionListener;
+
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -28,11 +27,18 @@ public class TestJobs2dPatterns {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
 
-		SelectSecondTestFigureOptionListener selectSecondTestFigureOptionListener = new SelectSecondTestFigureOptionListener(
-				DriverFeature.getDriverManager());
+		SelectTestFigure2OptionListener selectTestFigure2OptionListener = new SelectTestFigure2OptionListener(DriverFeature.getDriverManager());
+		SelectTestCommandOptionListener selectTestCommandOptionListener = new SelectTestCommandOptionListener(DriverFeature.getDriverManager());
+		SelectTriangleOptionListener selectTriangleOptionListener = new SelectTriangleOptionListener(DriverFeature.getDriverManager());
+		SelectRectangleOptionListener selectRectangleOptionListener = new SelectRectangleOptionListener(DriverFeature.getDriverManager());
+		SelectHexagonOptionalListener selectHexagonOptionalListener = new SelectHexagonOptionalListener(DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Figure Joe 2", selectSecondTestFigureOptionListener);
+		application.addTest("Figure jane", selectTestFigure2OptionListener);
+		application.addTest("Test command", selectTestCommandOptionListener);
+		application.addTest("Triangle",selectTriangleOptionListener);
+		application.addTest("Rectangle", selectRectangleOptionListener);
+		application.addTest("Hexagon", selectHexagonOptionalListener);
 	}
 
 	/**
