@@ -1,8 +1,4 @@
-package edu.kis.powp.jobs2d.factories;
-
-import edu.kis.powp.jobs2d.commands.ComplexCommand;
-import edu.kis.powp.jobs2d.commands.OperateToCommand;
-import edu.kis.powp.jobs2d.commands.SetPositionCommand;
+package edu.kis.powp.jobs2d.commands;
 
 public class TriangleFigureComplexCommand implements FigureComplexCommand {
 
