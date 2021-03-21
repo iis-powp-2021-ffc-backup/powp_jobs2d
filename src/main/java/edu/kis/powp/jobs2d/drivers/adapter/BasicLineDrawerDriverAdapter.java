@@ -10,11 +10,11 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 /**
  * driver adapter to drawer - Basic Line.
  */
-public class BasicLineDrawerAdapter implements Job2dDriver {
+public class BasicLineDrawerDriverAdapter implements Job2dDriver {
     private int startX = 0, startY = 0;
     private final DrawPanelController drawPanelController = DrawerFeature.getDrawerController();
 
-    public BasicLineDrawerAdapter() {
+    public BasicLineDrawerDriverAdapter() {
         super();
     }
 
