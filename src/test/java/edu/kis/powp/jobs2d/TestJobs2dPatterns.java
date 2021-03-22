@@ -11,9 +11,7 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.EditableLineAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.NormalAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.SpecialLineAdapter;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectSecondTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -32,8 +30,18 @@ public class TestJobs2dPatterns {
 		SelectSecondTestFigureOptionListener selectSecondTestFigureOptionListener = new SelectSecondTestFigureOptionListener(
 				DriverFeature.getDriverManager());
 
+		SelectTriangleOptionListener selectTriangleOptionListener = new SelectTriangleOptionListener(
+				DriverFeature.getDriverManager());
+		SelectRectangleOptionListener selectRectangleListener = new SelectRectangleOptionListener(
+				DriverFeature.getDriverManager());
+		SelectTrapezoidOptionListener selectTrapezoidListener = new SelectTrapezoidOptionListener(
+				DriverFeature.getDriverManager());
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectSecondTestFigureOptionListener);
+		application.addTest("Triangle", selectTriangleOptionListener);
+		application.addTest("Rectangle", selectRectangleListener);
+		application.addTest("Trapezoid", selectTrapezoidListener);
+
 
 	}
 
