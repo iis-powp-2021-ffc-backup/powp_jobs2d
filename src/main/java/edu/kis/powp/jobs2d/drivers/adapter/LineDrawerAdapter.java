@@ -7,7 +7,7 @@ import edu.kis.legacy.drawer.shape.line.SpecialLine;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
-public class LineDrawerAdapter extends DrawPanelController implements Job2dDriver {
+public class LineDrawerAdapter implements Job2dDriver {
     private int startX,startY;
 
     public LineDrawerAdapter(){ super(); }
