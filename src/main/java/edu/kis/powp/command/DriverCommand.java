@@ -1,7 +1,7 @@
 package edu.kis.powp.command;
 
-import edu.kis.powp.jobs2d.drivers.adapter.DefaultJob2dAdapter;
+import edu.kis.powp.jobs2d.Job2dDriver;
 
 public interface DriverCommand {
-    void execute(DefaultJob2dAdapter adapter);
+    void execute(Job2dDriver adapter);
 }

@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
+import edu.kis.powp.jobs2d.shapes.ShapeFactory;
 
 public class SelectTestFigureOptionListener implements ActionListener {
 
@@ -22,6 +23,12 @@ public class SelectTestFigureOptionListener implements ActionListener {
 				break;
 			case "Figure Joe 2":
 				FiguresJoe.figureScript2(driverManager.getCurrentDriver());
+				break;
+			case "Triangle":
+				ShapeFactory.getTriangle().execute(driverManager.getCurrentDriver());
+				break;
+			case "Star":
+				ShapeFactory.getStar().execute(driverManager.getCurrentDriver());
 				break;
 		}
 	}
