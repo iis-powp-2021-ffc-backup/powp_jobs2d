@@ -9,6 +9,9 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 
 public class LineDrawerAdapter implements Job2dDriver {
     private int startX,startY;
+    private ILine line = LineFactory.getBasicLine();
+
+    public enum LineType{BASIC, DOTTED, SPECIAL};
 
     public LineDrawerAdapter(){ super(); }
 
@@ -20,12 +23,22 @@ public class LineDrawerAdapter implements Job2dDriver {
 
     @Override
     public void operateTo(int x, int y) {
-        ILine specialLine = LineFactory.getSpecialLine();
-        specialLine.setStartCoordinates(startX,startY);
-        specialLine.setEndCoordinates(x,y);
-        DrawerFeature.getDrawerController().drawLine(specialLine);
+        line.setStartCoordinates(startX,startY);
+        line.setEndCoordinates(x,y);
+        DrawerFeature.getDrawerController().drawLine(line);
 
         startX = x;
         startY = y;
+    }
+
+    public void changeLine(LineType type){
+        switch (type){
+            case BASIC: line = LineFactory.getBasicLine();
+            break;
+            case DOTTED: line = LineFactory.getDottedLine();
+            break;
+            case SPECIAL: line = LineFactory.getSpecialLine();
+            break;
+        }
     }
 }
