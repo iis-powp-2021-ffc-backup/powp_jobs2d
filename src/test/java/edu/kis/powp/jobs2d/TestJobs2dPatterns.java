@@ -15,6 +15,8 @@ import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureTwoOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+import edu.kis.powp.factory.FigureFactory;
+import edu.kis.powp.factory.Figures;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -33,6 +35,9 @@ public class TestJobs2dPatterns {
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureTwoOptionListener);
+		application.addTest(Figures.SQUARE.figureName, event -> FigureFactory.square(DriverFeature.getDriverManager().getCurrentDriver()));
+		application.addTest(Figures.CROSS.figureName, event -> FigureFactory.cross(DriverFeature.getDriverManager().getCurrentDriver()));
+		application.addTest(Figures.RECTANGLE.figureName, event -> FigureFactory.rectangle(DriverFeature.getDriverManager().getCurrentDriver()));
 	}
 
 	/**
