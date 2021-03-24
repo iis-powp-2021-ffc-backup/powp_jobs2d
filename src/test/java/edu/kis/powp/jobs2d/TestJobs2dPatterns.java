@@ -9,10 +9,7 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.AbstractSelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectCustomTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -28,10 +25,18 @@ public class TestJobs2dPatterns {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
 
+		SelectRectangleOptionListener selectRectangleOptionListener = new SelectRectangleOptionListener(
+				DriverFeature.getDriverManager());
+
+		SelectTriangleOptionListener selectTriangleOptionListener = new SelectTriangleOptionListener(
+				DriverFeature.getDriverManager());
+
 		AbstractSelectTestFigureOptionListener Joe2 = new SelectCustomTestFigureOptionListener(DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", Joe2);
+		application.addTest("Rectangle", selectRectangleOptionListener);
+		application.addTest("Triangle", selectTriangleOptionListener);
 	}
 
 	/**
