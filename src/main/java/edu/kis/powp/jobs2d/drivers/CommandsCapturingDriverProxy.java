@@ -1,6 +1,6 @@
 package edu.kis.powp.jobs2d.drivers;
 
-import edu.kis.powp.command.ComplexCommand;
+import edu.kis.powp.command.ComplexDriverCommand;
 import edu.kis.powp.command.OperateToCommand;
 import edu.kis.powp.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.Job2dDriver;
@@ -8,7 +8,7 @@ import edu.kis.powp.jobs2d.Job2dDriver;
 public class CommandsCapturingDriverProxy implements Job2dDriver {
 
     private Job2dDriver driver;
-    private ComplexCommand commands = new ComplexCommand();
+    private ComplexDriverCommand commands = new ComplexDriverCommand();
 
     public CommandsCapturingDriverProxy(Job2dDriver driver) {
         this.driver = driver;
@@ -26,7 +26,7 @@ public class CommandsCapturingDriverProxy implements Job2dDriver {
         driver.operateTo(x, y);
     }
 
-    public ComplexCommand getCommand() {
+    public ComplexDriverCommand getCommand() {
         return commands;
     }
 }

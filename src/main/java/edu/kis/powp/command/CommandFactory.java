@@ -3,7 +3,7 @@ package edu.kis.powp.command;
 public class CommandFactory {
 
     public static DriverCommand getDrawRectangleCommand(int x, int y, int width, int height) {
-        ComplexCommand command = new ComplexCommand();
+        ComplexDriverCommand command = new ComplexDriverCommand();
         command.addCommand(new SetPositionCommand(x, y));
         command.addCommand(new OperateToCommand(x+width, y));
         command.addCommand(new OperateToCommand(x+width, y+height));
@@ -13,7 +13,7 @@ public class CommandFactory {
     }
 
     public static DriverCommand getDrawTriangleCommand(int x, int y, int width, int height) {
-        ComplexCommand command = new ComplexCommand();
+        ComplexDriverCommand command = new ComplexDriverCommand();
         command.addCommand(new SetPositionCommand(x, y));
         command.addCommand(new OperateToCommand(x+width, y));
         command.addCommand(new OperateToCommand(x+(width/2), y+height));
