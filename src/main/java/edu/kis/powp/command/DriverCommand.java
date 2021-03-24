@@ -8,7 +8,7 @@ public interface DriverCommand {
 
 class SetPositionCommand implements  DriverCommand{
 
-    int x,y;
+    private int x,y;
 
     public SetPositionCommand(int x, int y) {
         this.x = x;
@@ -17,12 +17,12 @@ class SetPositionCommand implements  DriverCommand{
 
     @Override
     public void execute(Job2dDriver job2dDriver) {
-
+        job2dDriver.setPosition(x,y);
     }
 }
 class OperateToCommand implements  DriverCommand{
 
-    int x,y;
+    private int x,y;
 
     public OperateToCommand(int x, int y) {
         this.x = x;
@@ -31,6 +31,6 @@ class OperateToCommand implements  DriverCommand{
 
     @Override
     public void execute(Job2dDriver job2dDriver) {
-
+        job2dDriver.operateTo(x,y);
     }
 }
