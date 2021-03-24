@@ -8,7 +8,7 @@ public class ComplexCommand implements DriverCommand{
 
     private List <DriverCommand> lista;
     
-    ComplexCommand(List <DriverCommand> lista)
+    public ComplexCommand(List <DriverCommand> lista)
     {
         this.lista=lista;
     }
