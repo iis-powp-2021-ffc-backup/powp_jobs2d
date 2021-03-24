@@ -2,6 +2,7 @@ package edu.kis.powp.factory;
 
 import edu.kis.powp.composer.ComplexCommand;
 import edu.kis.powp.factory.figures.CircleDrawing;
+import edu.kis.powp.factory.figures.QuadrilateralDrawing;
 import edu.kis.powp.factory.figures.RectangleDrawing;
 import edu.kis.powp.factory.figures.TriangleDrawing;
 import edu.kis.powp.jobs2d.Job2dDriver;
@@ -21,6 +22,8 @@ public class FiguresFactory {
                 return TriangleDrawing.getDrawing(driver);
             case RECTANGLE:
                 return RectangleDrawing.getDrawing(driver);
+            case QUADRILATERAL:
+                return QuadrilateralDrawing.getDrawing(driver);
             default:
                 return null;
         }

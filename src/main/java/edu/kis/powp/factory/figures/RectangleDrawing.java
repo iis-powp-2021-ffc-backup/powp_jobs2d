@@ -7,9 +7,7 @@ import edu.kis.powp.jobs2d.Job2dDriver;
 
 public class RectangleDrawing {
 
-    private RectangleDrawing() {
-
-    }
+    private RectangleDrawing() {}
 
     public static ComplexCommand getDrawing(Job2dDriver driver) {
         int width = 60;

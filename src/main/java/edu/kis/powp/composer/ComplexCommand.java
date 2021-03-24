@@ -7,13 +7,17 @@ import java.util.List;
 
 public class ComplexCommand implements DriverCommand {
 
-    private final List<DriverCommand> commands = new ArrayList<>();
+    private List<DriverCommand> commands = new ArrayList<>();
 
     public ComplexCommand() {
     }
 
     public ComplexCommand(DriverCommand ...commands) {
         this.commands.addAll(Arrays.asList(commands));
+    }
+
+    public ComplexCommand(List<DriverCommand> commands) {
+        this.commands = commands;
     }
 
     public void addCommand(DriverCommand ...commands) {
