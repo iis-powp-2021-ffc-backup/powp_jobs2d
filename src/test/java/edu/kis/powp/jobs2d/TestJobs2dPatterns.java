@@ -2,12 +2,15 @@ package edu.kis.powp.jobs2d;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.factory.FigureTypes;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
@@ -24,11 +27,18 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager());
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
-		application.addTest("Figure Jane", selectTestFigureOptionListener);
+
+		Map<String, FigureTypes> tests = new HashMap<>();
+		tests.put("Figure Joe 1", FigureTypes.JOE_1);
+		tests.put("Figure Joe 2", FigureTypes.JOE_2);
+		tests.put("Figure Jane", FigureTypes.JANE);
+		tests.put("Circle", FigureTypes.CIRCLE);
+		tests.put("Rectangle", FigureTypes.RECTANGLE);
+		tests.put("Triangle", FigureTypes.TRIANGLE);
+
+		tests.forEach((name, type) -> application.addTest(
+				name, new SelectTestFigureOptionListener(DriverFeature.getDriverManager(), type))
+		);
 	}
 
 	/**
