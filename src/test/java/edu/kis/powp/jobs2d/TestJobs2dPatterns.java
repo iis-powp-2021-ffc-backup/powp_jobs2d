@@ -8,12 +8,7 @@ import java.util.logging.Logger;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.PanelDrawerAdapter;
-import edu.kis.powp.jobs2d.events.AbstractSelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.JaneSelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.Joe1SelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.Joe2SelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.RectangleTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.TriangleTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.jobs2d.features.LineFeature;
@@ -37,12 +32,15 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 		AbstractSelectTestFigureOptionListener triangleTestFigureOptionListener = new TriangleTestFigureOptionListener(
 				DriverFeature.getDriverManager());
+		AbstractSelectTestFigureOptionListener joe1CaptureSelectTestFigureOptionListener = new Joe1CaptureSelectTestFigureOptionListener(
+				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", Joe1TestFigureOptionListener);
 		application.addTest("Figure Joe 2", Joe2TestFigureOptionListener);
 		application.addTest("Figure Jane", JaneTestFigureOptionListener);
 		application.addTest("Rectangle shape", rectangleTestFigureOptionListener);
 		application.addTest("Triangle shape", triangleTestFigureOptionListener);
+		application.addTest("Capture Figure Joe 1", joe1CaptureSelectTestFigureOptionListener);
 	}
 
 	/**

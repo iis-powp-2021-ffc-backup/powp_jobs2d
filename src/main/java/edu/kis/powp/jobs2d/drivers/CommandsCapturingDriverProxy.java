@@ -26,7 +26,7 @@ public class CommandsCapturingDriverProxy implements Job2dDriver {
         driver.operateTo(x, y);
     }
 
-    public ComplexCommand getCommands() {
+    public ComplexCommand getCommand() {
         return commands;
     }
 }
