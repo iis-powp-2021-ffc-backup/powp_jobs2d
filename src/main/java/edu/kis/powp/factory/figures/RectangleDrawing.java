@@ -12,15 +12,15 @@ public class RectangleDrawing {
     }
 
     public static ComplexCommand getDrawing(Job2dDriver driver) {
-        int width = 30;
-        int height = 30;
+        int width = 60;
+        int height = 60;
 
         return new ComplexCommand(
                 new SetPositionCommand(Math.floorDiv(width, 2), Math.floorDiv(height, 2), driver),
                 new OperateToCommand(Math.floorDiv(width, 2), Math.floorDiv(-height, 2), driver),
-                new OperateToCommand(Math.floorDiv(width, 2), Math.floorDiv(height, 2), driver),
+                new OperateToCommand(Math.floorDiv(-width, 2), Math.floorDiv(-height, 2), driver),
                 new OperateToCommand(Math.floorDiv(-width, 2), Math.floorDiv(height, 2), driver),
-                new OperateToCommand(Math.floorDiv(-width, 2), Math.floorDiv(-height, 2), driver)
+                new OperateToCommand(Math.floorDiv(width, 2), Math.floorDiv(height, 2), driver)
         );
     }
 }

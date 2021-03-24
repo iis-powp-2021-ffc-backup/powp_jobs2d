@@ -12,8 +12,8 @@ public class TriangleDrawing {
     }
 
     public static ComplexCommand getDrawing(Job2dDriver driver) {
-        int baseSize = 30;
-        int height = 30;
+        int baseSize = 60;
+        int height = 60;
 
         return new ComplexCommand(
                 new SetPositionCommand(0, 0, driver),

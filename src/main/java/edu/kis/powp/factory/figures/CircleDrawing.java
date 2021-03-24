@@ -16,7 +16,7 @@ public class CircleDrawing {
      */
     public static ComplexCommand getDrawing(Job2dDriver driver) {
 
-        double radius = 30;
+        double radius = 60;
 
         ComplexCommand circleCommands = new ComplexCommand(
                 new SetPositionCommand(
@@ -25,7 +25,7 @@ public class CircleDrawing {
                         driver)
         );
 
-        for (double angle = 2 * Math.PI / radius; angle < 2 * Math.PI; angle += 2 * Math.PI / radius) {
+        for (double angle = 2 * Math.PI / radius; angle < 2 * Math.PI + 1; angle += 2 * Math.PI / radius) {
             int x = (int)(radius * Math.cos(angle));
             int y = (int)(radius * Math.sin(angle));
             circleCommands.addCommand(new OperateToCommand(x, y, driver));
