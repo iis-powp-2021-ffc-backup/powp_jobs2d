@@ -9,7 +9,8 @@ public class ComplexCommand implements DriverCommand {
 
     private final List<DriverCommand> commands = new ArrayList<>();
 
-    public ComplexCommand() {}
+    public ComplexCommand() {
+    }
 
     public ComplexCommand(DriverCommand ...commands) {
         this.commands.addAll(Arrays.asList(commands));
@@ -21,8 +22,6 @@ public class ComplexCommand implements DriverCommand {
 
     @Override
     public void execute() {
-        for (DriverCommand command : commands) {
-            command.execute();
-        }
+        commands.forEach(DriverCommand::execute);
     }
 }
