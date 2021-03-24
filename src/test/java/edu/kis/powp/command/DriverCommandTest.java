@@ -19,13 +19,13 @@ public class DriverCommandTest
         @Override
         public void setPosition(int x, int y)
         {
-            System.out.println("Driver setPosition x: " + x +" and y:"+ y);
+            System.out.println("Driver set position x: " + x +" and y:"+ y);
         }
 
         @Override
         public void operateTo(int x, int y)
         {
-            System.out.println("Driver operateTo x: " + x +" and y:"+ y);
+            System.out.println("Driver operate to x: " + x +" and y:"+ y);
         }
 
 
