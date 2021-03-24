@@ -2,7 +2,7 @@ package edu.kis.powp.jobs2d;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,13 +28,14 @@ public class TestJobs2dPatterns {
 	 */
 	private static void setupPresetTests(Application application) {
 
-		Map<String, FigureTypes> tests = new HashMap<>();
+		Map<String, FigureTypes> tests = new LinkedHashMap<>();
 		tests.put("Figure Joe 1", FigureTypes.JOE_1);
 		tests.put("Figure Joe 2", FigureTypes.JOE_2);
 		tests.put("Figure Jane", FigureTypes.JANE);
 		tests.put("Circle", FigureTypes.CIRCLE);
 		tests.put("Rectangle", FigureTypes.RECTANGLE);
 		tests.put("Triangle", FigureTypes.TRIANGLE);
+		tests.put("Quadrilateral", FigureTypes.QUADRILATERAL);
 
 		tests.forEach((name, type) -> application.addTest(
 				name, new SelectTestFigureOptionListener(DriverFeature.getDriverManager(), type))

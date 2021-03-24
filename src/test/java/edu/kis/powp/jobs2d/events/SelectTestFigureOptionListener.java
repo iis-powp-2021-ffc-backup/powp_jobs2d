@@ -36,6 +36,7 @@ public class SelectTestFigureOptionListener implements ActionListener {
 			case CIRCLE:
 			case TRIANGLE:
 			case RECTANGLE:
+			case QUADRILATERAL:
 				Objects.requireNonNull(FiguresFactory.getFigureCommands(figureType, driverManager.getCurrentDriver()))
 						.execute();
 				break;
