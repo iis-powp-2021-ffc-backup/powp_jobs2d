@@ -6,11 +6,9 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
-import javax.sound.sampled.Line;
 
 public class LineDrawerAdapter implements Job2dDriver {
     private int startX = 0, startY = 0;
-    private DrawPanelController drawerController  = DrawerFeature.getDrawerController();
     private ILine line;
 
     public LineDrawerAdapter(ILine line) {
@@ -28,8 +26,7 @@ public class LineDrawerAdapter implements Job2dDriver {
     public void operateTo(int x, int y) {
         line.setStartCoordinates(this.startX, this.startY);
         line.setEndCoordinates(x, y);
-        drawerController.drawLine(line);
-
+        DrawerFeature.getDrawerController().drawLine(line);
         setPosition(x,y);
     }
     public void setLineType(ILine line)
