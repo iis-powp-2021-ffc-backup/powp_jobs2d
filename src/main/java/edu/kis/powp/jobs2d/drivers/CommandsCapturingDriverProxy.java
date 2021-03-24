@@ -14,11 +14,13 @@ public class CommandsCapturingDriverProxy implements Job2dDriver {
         this.driver = driver;
     }
 
+    @Override
     public void setPosition(int x, int y) {
         commands.addCommand(new SetPositionCommand(x, y));
         driver.setPosition(x, y);
     }
 
+    @Override
     public void operateTo(int x, int y) {
         commands.addCommand(new OperateToCommand(x, y));
         driver.operateTo(x, y);

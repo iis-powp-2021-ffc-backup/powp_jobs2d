@@ -19,4 +19,13 @@ public class ComplexCommand implements DriverCommand {
     public void addCommand(DriverCommand command) {
         commands.add(command);
     }
+
+    @Override
+    public String toString() {
+        String result = "";
+        for(DriverCommand command : commands) {
+            result += command + "\n";
+        }
+        return result;
+    }
 }
