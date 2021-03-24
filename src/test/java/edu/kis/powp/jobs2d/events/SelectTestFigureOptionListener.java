@@ -16,13 +16,15 @@ public class SelectTestFigureOptionListener implements ActionListener {
 		this.driverManager = driverManager;
 	}
 
+	private static final String[] scriptNames = { "FIgure Joe 1", "Figure Joe 2", "Figure Jane 1" };
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().equals("Figure Joe 1")) {
+		if (e.getActionCommand().equals(scriptNames[0])) {
 			FiguresJoe.figureScript1(driverManager.getCurrentDriver());
-		} else if (e.getActionCommand().equals("Figure Joe 2")) {
+		} else if (e.getActionCommand().equals(scriptNames[1])) {
 			FiguresJoe.figureScript2(driverManager.getCurrentDriver());
-		} else if (e.getActionCommand().equals("Figure Jane 1")){
+		} else if (e.getActionCommand().equals(scriptNames[2])) {
 			FiguresJane.figureScript(new JaneAdapter(0, 0, driverManager.getCurrentDriver()));
 		}
 	}

@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapters.JoeAdapter;
+import edu.kis.powp.jobs2d.drivers.adapters.Job2DrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapters.LineTypeAdapter;
 import edu.kis.powp.jobs2d.drivers.adapters.LineTypeAdapter.LineType;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
@@ -43,7 +43,7 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new JoeAdapter();
+		Job2dDriver testDriver = new Job2DrawerAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
 		DriverFeature.addDriver("Basic Line", new LineTypeAdapter(LineType.LINEBASIC));
@@ -95,8 +95,6 @@ public class TestJobs2dPatterns {
 			public void run() {
 				Application app = new Application("2d jobs Visio");
 				DrawerFeature.setupDrawerPlugin(app);
-				// setupDefaultDrawerVisibilityManagement(app);
-
 				DriverFeature.setupDriverPlugin(app);
 				setupDrivers(app);
 				setupPresetTests(app);
