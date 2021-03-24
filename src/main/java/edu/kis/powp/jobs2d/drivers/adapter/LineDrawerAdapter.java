@@ -36,4 +36,3 @@ public class LineDrawerAdapter extends DrawPanelController implements Job2dDrive
     }
 
 }
-}
