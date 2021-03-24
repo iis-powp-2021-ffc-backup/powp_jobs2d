@@ -17,7 +17,6 @@ public class BasicLineDrawerAdapter extends DrawPanelController implements Job2d
 	private int startX = 0, startY = 0;
 
 	public BasicLineDrawerAdapter() {
-		super();
 	}
 
 	@Override
@@ -32,7 +31,8 @@ public class BasicLineDrawerAdapter extends DrawPanelController implements Job2d
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 		setPosition(x, y);
-		DrawerFeature.getDrawerController().drawLine(line);
+		drawLine(line);
+		//DrawerFeature.getDrawerController().drawLine(line);
 	}
 
 	@Override
