@@ -19,7 +19,6 @@ public class TestFigure2OptionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(driverManager.getCurrentDriver());
         DriverCommand driver = ShapesFactory.getCommands(driverManager, this.figure);
         driver.execute();
     }
