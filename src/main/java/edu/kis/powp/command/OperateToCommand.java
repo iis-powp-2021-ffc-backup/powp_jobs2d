@@ -6,15 +6,16 @@ import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 public class OperateToCommand implements DriverCommand{
     private final int x;
     private final int y;
+    private Job2dDriver driver;
 
-    public OperateToCommand(int x, int y) {
+    public OperateToCommand(Job2dDriver driver,int x, int y) {
+        this.driver = driver;
         this.x = x;
         this.y = y;
     }
 
     @Override
     public void execute() {
-        Job2dDriver adapter = new LineDrawerAdapter();
-        adapter.setPosition(x, y);
+        driver.operateTo(x, y);
     }
 }
