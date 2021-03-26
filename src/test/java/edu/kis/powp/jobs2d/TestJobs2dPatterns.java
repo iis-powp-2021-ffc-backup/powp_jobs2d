@@ -12,9 +12,10 @@ import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.TestFigure2OptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
-
+import edu.kis.powp.command.Quadrangle;
 
 
 public class TestJobs2dPatterns {
@@ -28,11 +29,19 @@ public class TestJobs2dPatterns {
 	 */
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener( DriverFeature.getDriverManager(), Figure.FIGURE1);
-
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 
 		SelectTestFigureOptionListener selectTestFigureOptionListener2 = new SelectTestFigureOptionListener( DriverFeature.getDriverManager(), Figure.FIGURE2);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
+
+		TestFigure2OptionListener listener3 = new TestFigure2OptionListener( DriverFeature.getDriverManager(), Quadrangle.SQUARE);
+		application.addTest("Figure SQUARE", listener3);
+
+		TestFigure2OptionListener listener4 = new TestFigure2OptionListener( DriverFeature.getDriverManager(), Quadrangle.RHOMBUS);
+		application.addTest("Figure RHOMBUS", listener4);
+
+		TestFigure2OptionListener listener5 = new TestFigure2OptionListener( DriverFeature.getDriverManager(), Quadrangle.CUBE);
+		application.addTest("Figure CUBE", listener5);
 	}
 
 	/**

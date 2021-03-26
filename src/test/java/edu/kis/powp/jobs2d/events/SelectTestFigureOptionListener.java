@@ -20,6 +20,7 @@ public class SelectTestFigureOptionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println(driverManager.getCurrentDriver());
 		if ( figure == Figure.FIGURE1)
 			FiguresJoe.figureScript1(driverManager.getCurrentDriver());
 		else
