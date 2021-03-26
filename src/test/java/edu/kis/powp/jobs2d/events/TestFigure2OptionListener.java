@@ -2,13 +2,13 @@ package edu.kis.powp.jobs2d.events;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import edu.kis.powp.command.Quadrangle;
 import edu.kis.powp.command.ShapesFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.command.DriverCommand;
 
 public class TestFigure2OptionListener implements ActionListener {
+
     private DriverManager driverManager;
     private Quadrangle figure;
 
