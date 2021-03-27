@@ -5,10 +5,24 @@ import java.util.LinkedList;
 
 public class ComplexCommand implements DriverCommand{
 
-    private LinkedList<DriverCommand> commandList = new LinkedList<>();
+    private LinkedList<DriverCommand> commandList;
 
-    public ComplexCommand(){
+    public ComplexCommand(LinkedList<DriverCommand> commandList){
+        this.commandList = commandList;
 
+    }
+
+    public static final class CommandBulider{
+        private LinkedList<DriverCommand> commandList = new LinkedList<>();
+
+        public CommandBulider add(DriverCommand command){
+            commandList.add(command);
+            return this;
+        }
+
+        public ComplexCommand bulid(){
+            return new ComplexCommand(commandList);
+        }
     }
 
     public void add(DriverCommand command){
