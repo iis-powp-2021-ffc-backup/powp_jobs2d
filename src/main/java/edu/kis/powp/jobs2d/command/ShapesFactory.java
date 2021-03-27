@@ -13,4 +13,17 @@ public class ShapesFactory {
         return complexCommand;
 
     }
+
+    public DriverCommand getRectangle(){
+    ComplexCommand complexCommand = new ComplexCommand();
+    complexCommand.add(new SetPositionCommand(-100, 0));
+    complexCommand.add(new OperateToCommand(-100, 100));
+    complexCommand.add(new OperateToCommand(100, 100));
+    complexCommand.add(new OperateToCommand(100, 0));
+    complexCommand.add(new OperateToCommand(-100, 0));
+    return complexCommand;
+    }
+
+
+
 }
