@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class ComplexCommand implements DriverCommand{
 
-    private LinkedList<DriverCommand> commandList;
+    private LinkedList<DriverCommand> commandList = new LinkedList<>();
 
     public ComplexCommand(){
 
