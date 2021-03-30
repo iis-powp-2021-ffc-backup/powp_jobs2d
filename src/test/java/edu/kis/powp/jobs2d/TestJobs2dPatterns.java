@@ -9,9 +9,7 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.WriteLineAdapter;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureJoe1OptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureJoe2OptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -28,9 +26,15 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 		SelectTestFigureJoe2OptionListener selectTestFigureJoe2OptionListener = new SelectTestFigureJoe2OptionListener(
 				DriverFeature.getDriverManager());
+		SelectTestFigureDavidShieldOptionListener selectTestFigureDavidShieldOptionListener = new SelectTestFigureDavidShieldOptionListener(
+				DriverFeature.getDriverManager());
+		SelectTestFigureCubeOptionListener selectTestFigureCubeOptionListener = new SelectTestFigureCubeOptionListener(
+				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureJoe1OptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureJoe2OptionListener);
+		application.addTest("Shield of David", selectTestFigureDavidShieldOptionListener);
+		application.addTest("Cube", selectTestFigureCubeOptionListener);
 	}
 
 	/**
