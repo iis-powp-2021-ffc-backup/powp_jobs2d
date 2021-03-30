@@ -10,8 +10,8 @@ public class TriangleShape {
     public static DriverCommand getShapeCommand() {
         return new ComplexCommand()
                 .addCommand(new SetPositionCommand(0, 0))
-                .addCommand(new OperateToCommand(30, 0))
-                .addCommand(new OperateToCommand(15, 30))
+                .addCommand(new OperateToCommand(200, 0))
+                .addCommand(new OperateToCommand(100, 200))
                 .addCommand(new OperateToCommand(0, 0));
     }
 }

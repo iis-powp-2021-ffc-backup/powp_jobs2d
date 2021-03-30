@@ -9,9 +9,9 @@ public class RectangleShape {
     public static DriverCommand getShapeCommand() {
         return new ComplexCommand()
                 .addCommand(new SetPositionCommand(0, 0))
-                .addCommand(new OperateToCommand(30, 0))
-                .addCommand(new OperateToCommand(30, 30))
-                .addCommand(new OperateToCommand(0, 30))
+                .addCommand(new OperateToCommand(200, 0))
+                .addCommand(new OperateToCommand(200, 200))
+                .addCommand(new OperateToCommand(0, 200))
                 .addCommand(new OperateToCommand(0, 0));
     }
 }
