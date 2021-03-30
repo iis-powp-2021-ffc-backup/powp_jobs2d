@@ -10,8 +10,9 @@ public class ComplexCommand implements DriverCommand{
     public ComplexCommand(){
         commands = new ArrayList<>();
     }
-    public void addCommand(DriverCommand command){
+    public ComplexCommand addCommand(DriverCommand command){
         commands.add(command);
+        return this;
     }
     @Override
     public void execute(Job2dDriver jobs2Driver) {
