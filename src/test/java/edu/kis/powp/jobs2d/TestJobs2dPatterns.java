@@ -13,6 +13,9 @@ import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureTwoOptionListener;
+import edu.kis.powp.jobs2d.events.SelectSquareListener;
+import edu.kis.powp.jobs2d.events.SelectCrossListener;
+import edu.kis.powp.jobs2d.events.SelectRectangleListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.factory.FigureFactory;
@@ -33,11 +36,22 @@ public class TestJobs2dPatterns {
 		SelectTestFigureTwoOptionListener selectTestFigureTwoOptionListener = new SelectTestFigureTwoOptionListener(
 				DriverFeature.getDriverManager());
 
+		SelectRectangleListener selectRectangleListener = new SelectRectangleListener(
+				DriverFeature.getDriverManager());
+
+		SelectSquareListener selectSquareListener = new SelectSquareListener(
+				DriverFeature.getDriverManager());
+
+		SelectCrossListener selectCrossListener = new SelectCrossListener(
+				DriverFeature.getDriverManager());
+
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureTwoOptionListener);
-		application.addTest(Figures.SQUARE.figureName, event -> FigureFactory.square(DriverFeature.getDriverManager().getCurrentDriver()));
-		application.addTest(Figures.CROSS.figureName, event -> FigureFactory.cross(DriverFeature.getDriverManager().getCurrentDriver()));
-		application.addTest(Figures.RECTANGLE.figureName, event -> FigureFactory.rectangle(DriverFeature.getDriverManager().getCurrentDriver()));
+
+		application.addTest(Figures.SQUARE.figureName, selectSquareListener);
+		application.addTest(Figures.CROSS.figureName, selectCrossListener);
+		application.addTest(Figures.RECTANGLE.figureName, selectRectangleListener);
 	}
 
 	/**

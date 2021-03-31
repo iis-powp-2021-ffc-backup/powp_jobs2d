@@ -16,7 +16,6 @@ public class FigureFactory {
         command.queueCommand(new OperateToCommand(50,0,job2dDriver));
         command.queueCommand(new OperateToCommand(0,0,job2dDriver));
 
-        command.execute();
         return command;
     }
 
@@ -28,7 +27,6 @@ public class FigureFactory {
         command.queueCommand(new OperateToCommand(50,0,job2dDriver));
         command.queueCommand(new OperateToCommand(0,0,job2dDriver));
 
-        command.execute();
         return command;
     }
 
@@ -42,7 +40,6 @@ public class FigureFactory {
         command.queueCommand(new OperateToCommand(-40,60,job2dDriver));
 
 
-        command.execute();
         return command;
     }
 }
