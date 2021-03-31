@@ -4,7 +4,6 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
@@ -14,7 +13,7 @@ import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
-
+import edu.kis.powp.command.FiguresFactory;
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -24,11 +23,18 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
+		SelectTestFigureOptionListener selectTestFigureOptionListenerJoe1 = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
-
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
+		SelectTestFigureOptionListener selectTestFigureOptionListenerJoe2 = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager());
+		SelectTestFigureOptionListener selectTestFigureOptionListenerTriangle = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager());
+		SelectTestFigureOptionListener selectTestFigureOptionListenerParallelogram = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager());
+		application.addTest("Figure Joe 1", selectTestFigureOptionListenerJoe1);
+		application.addTest("Figure Joe 2", selectTestFigureOptionListenerJoe2);
+		application.addTest("Triangle", selectTestFigureOptionListenerTriangle);
+		application.addTest("Parallelogram", selectTestFigureOptionListenerParallelogram);
 	}
 
 	/**
