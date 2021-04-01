@@ -17,6 +17,10 @@ public class PatternFactory {
         this.driver = driver;
     }
 
+    public static ComplexCommand getPattern(Patterns pattern, int size, Job2dDriver driver) {
+        return new PatternFactory(pattern, size, driver).getCommand();
+    }
+
     public ComplexCommand getCommand() {
         ComplexCommand comm = new ComplexCommand();
         switch (pattern) {
