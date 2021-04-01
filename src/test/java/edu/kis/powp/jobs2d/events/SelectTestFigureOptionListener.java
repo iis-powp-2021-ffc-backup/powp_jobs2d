@@ -18,7 +18,7 @@ public class SelectTestFigureOptionListener implements ActionListener {
 		this.driverManager = driverManager;
 	}
 
-	private static final String[] scriptNames = { "FIgure Joe 1", "Figure Joe 2", "Figure Jane 1",
+	public static final String[] scriptNames = { "Figure Joe 1", "Figure Joe 2", "Figure Jane 1",
 			"Complex Example Triangle" };
 
 	@Override
@@ -30,7 +30,7 @@ public class SelectTestFigureOptionListener implements ActionListener {
 		} else if (e.getActionCommand().equals(scriptNames[2])) {
 			FiguresJane.figureScript(new JaneAdapter(0, 0, driverManager.getCurrentDriver()));
 		} else if (e.getActionCommand().equals(scriptNames[3])) {
-			PatternFactory.getPattern(Patterns.TRIANGLE, 120, driverManager.getCurrentDriver());
+			PatternFactory.getPattern(Patterns.TRIANGLE, 120, driverManager.getCurrentDriver()).execute();
 		}
 	}
 }
