@@ -1,5 +1,6 @@
 package edu.kis.powp.jobs2d;
 
+import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener.FigureType;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
@@ -8,6 +9,7 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter.LineType;
@@ -25,11 +27,12 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager());
-
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
+		DriverManager drv = DriverFeature.getDriverManager();
+		application.addTest("Figure Joe 1", new SelectTestFigureOptionListener(drv, FigureType.FJOE1));
+		application.addTest("Figure Joe 2", new SelectTestFigureOptionListener(drv, FigureType.FJOE2));
+		application.addTest("Rectangle", new SelectTestFigureOptionListener(drv, FigureType.FRECT));
+		application.addTest("Triangle", new SelectTestFigureOptionListener(drv, FigureType.FTRNG));
+		application.addTest("Line", new SelectTestFigureOptionListener(drv, FigureType.FLINE));
 	}
 
 	/**
