@@ -17,6 +17,8 @@ import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.jobs2d.events.DrawingType;
+import edu.kis.powp.command.DriverCommand;
+import edu.kis.powp.command.FigureFactory;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -31,9 +33,15 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager(), DrawingType.BOX);
 		SelectTestFigureOptionListener selectTestFigureOptionListenerSecond = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager(), DrawingType.DRAWING);
+		SelectTestFigureOptionListener selectTestFigureOptionListenerRectangle = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), DrawingType.RECTANGLE);
+		SelectTestFigureOptionListener selectTestFigureOptionListenerTriangle = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), DrawingType.TRIANGLE);
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListenerSecond);
+		application.addTest("Rectangle",selectTestFigureOptionListenerRectangle);
+		application.addTest("Triangle",selectTestFigureOptionListenerTriangle);
 	}
 
 	/**
